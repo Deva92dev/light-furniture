@@ -11,6 +11,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
+    "config": "^3.3.11",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dayjs": "^1.11.10",
@@ -29,11 +30,13 @@
     "nanoid": "^5.0.4",
     "pino": "^8.17.2",
     "pino-pretty": "^10.3.1",
-    "validators": "^0.3.1"
+    "stripe": "^14.19.0",
+    "validator": "^13.11.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/compression": "^1.7.5",
+    "@types/config": "^3.3.3",
     "@types/cookie-parser": "^1.4.6",
     "@types/cors": "^2.8.17",
     "@types/dompurify": "^3.0.5",

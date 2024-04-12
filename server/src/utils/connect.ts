@@ -1,21 +1,24 @@
 import mongoose from 'mongoose';
+import { log } from './logger';
+import config from 'config';
 
 export const connectDB = async () => {
+  const MONGO_URL = config.get<string>('MONGO_URL');
   try {
-    mongoose.connect(process.env.MONGO_URL);
+    mongoose.connect(MONGO_URL);
     const connection = mongoose.connection;
 
     connection.on('connected', () => {
-      console.log('MongoDB is connected successfully');
+      log.info('MongoDB is connected successfully');
     });
     connection.on('error', (err: Error) => {
-      console.log(
+      log.error(
         'Something goes wrong. Please make sure that MongoDB is running' + err
       );
       process.exit();
     });
   } catch (error) {
-    console.log('Something goes wrong');
-    console.log(error);
+    log.info('Something goes wrong');
+    log.error(error);
   }
 };
